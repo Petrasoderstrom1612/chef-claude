@@ -1,19 +1,17 @@
 import React from 'react'
 
 export const Form = () => {
-  const ingrediences = ["egg", "tomato", "basil"]
+  const [ingrediences, setIngrediences] = React.useState(["egg", "tomato", "basil"])
 
-  const ingrediencesList = ingrediences.map((oneIngredience) => {
+  const listOfIngredienses = ingrediences.map((oneIngredience) => {
     return <li key={oneIngredience} >{oneIngredience}</li>
   })
-
+  
   const addIngredience = (e) => {
     e.preventDefault()
-    console.log("clicked")
-    const formData = new FormData(submitform)
-    const newIngredience = formData.get("ingredience")
-    ingrediences.push(newIngredience)
-    console.log(ingrediences)
+    const newIngredience = new FormData(submitform).get("ingredience")
+    console.log(newIngredience)
+    setIngrediences(prevIngrediences => [...prevIngrediences, newIngredience])
   }
 
   return (
@@ -25,9 +23,9 @@ export const Form = () => {
         aria-label="Add ingredient"
         name="ingredience"
         />
-        <button>Add ingredient</button>
+        <button onClick={addIngredience}>Add ingredient</button>
       </form>
-      <ul>{ingrediencesList}</ul>
+      <ul>{listOfIngredienses}</ul>
     </main>
   )
 }
