@@ -2,7 +2,7 @@ import React from "react";
 import Recipe from "./Recipe";
 
 export const Form = () => {
-  const [ingrediences, setIngrediences] = React.useState([]);
+  const [ingrediences, setIngrediences] = React.useState(["a","b","s","d"]);
   const [showRecipe, setShowRecipe] = React.useState(false)
 
   const listOfIngredienses = ingrediences.map((oneIngredience) => {
