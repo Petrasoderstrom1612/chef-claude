@@ -1,5 +1,5 @@
 import React from 'react'
-import chefClaudeLogo from "./assets/chef-claude-icon.png"
+import chefClaudeLogo from "../assets/chef-claude-icon.png"
 
 export const Header = () => {
   return (
